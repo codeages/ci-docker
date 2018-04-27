@@ -1,5 +1,3 @@
-FROM node:alpine
-
-RUN apk add --no-cache bash curl
+FROM node:wheezy
 
 RUN npm install -g vuepress@0.8.4 
