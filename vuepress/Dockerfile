@@ -1,3 +1,3 @@
 FROM node:wheezy
 
-RUN npm install -g vuepress@0.10.0 
+RUN npm install -g vuepress@0.10.1 
