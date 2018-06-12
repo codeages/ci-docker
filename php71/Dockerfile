@@ -44,6 +44,8 @@ RUN date \
   && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
   && php composer-setup.php \
   && php -r "unlink('composer-setup.php');" \
+  && mv composer.phar /usr/bin/composer \
+  && chmod +x /usr/bin/composer \
   && curl -L https://phar.phpunit.de/phpunit-7.phar -o /usr/bin/phpunit \
   && chmod +x /usr/bin/phpunit \
   && curl https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -o /usr/bin/php-cs-fixer \
