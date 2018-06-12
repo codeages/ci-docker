@@ -25,12 +25,12 @@ RUN pecl install redis \
   && cd ..; rm -rf librdkafka-0.11.4/ \
   && pecl install rdkafka \
   && echo 'extension=rdkafka.so' > /etc/php/7.1/mods-available/rdkafka.ini \
-  && cd /etc/php/7.1/cli/conf.d; sudo ln -s ../../mods-available/rdkafka.ini ./30-rdkafka.ini \
-  && cd /etc/php/7.1/phpdbg/conf.d; sudo ln -s ../../mods-available/rdkafka.ini ./30-rdkafka.ini \
+  && cd /etc/php/7.1/cli/conf.d; ln -s ../../mods-available/rdkafka.ini ./30-rdkafka.ini \
+  && cd /etc/php/7.1/phpdbg/conf.d; ln -s ../../mods-available/rdkafka.ini ./30-rdkafka.ini \
   && pecl install https://pecl.php.net/get/Mosquitto-0.4.0.tgz \
   && echo 'extension=mosquitto.so' > /etc/php/7.1/mods-available/mosquitto.ini \
-  && cd /etc/php/7.1/cli/conf.d; sudo ln -s ../../mods-available/mosquitto.ini ./30-mosquitto.ini \
-  && cd /etc/php/7.1/phpdbg/conf.d; sudo ln -s ../../mods-available/mosquitto.ini ./30-mosquitto.ini
+  && cd /etc/php/7.1/cli/conf.d; ln -s ../../mods-available/mosquitto.ini ./30-mosquitto.ini \
+  && cd /etc/php/7.1/phpdbg/conf.d; ln -s ../../mods-available/mosquitto.ini ./30-mosquitto.ini
 
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
   && apt-get update \
