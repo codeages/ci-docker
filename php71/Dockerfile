@@ -16,7 +16,7 @@ RUN pecl install redis \
   && cd /etc/php/7.1/cli/conf.d && ln -s ../../mods-available/swoole.ini 30-swoole.ini \
   && cd /etc/php/7.1/phpdbg/conf.d && ln -s ../../mods-available/swoole.ini 30-swoole.ini \
   && curl -s "https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh" | bash \
-  && curl -L https://github.com/edenhill/librdkafka/archive/v0.11.4.tar.gz \
+  && curl -L https://github.com/edenhill/librdkafka/archive/v0.11.4.tar.gz -o v0.11.4.tar.gz \
   && tar zxvf v0.11.4.tar.gz \
   && cd librdkafka-0.11.4/ \
   && ./configure \
