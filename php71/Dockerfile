@@ -52,4 +52,5 @@ RUN date \
   && chmod +x /usr/bin/php-cs-fixer \
   && curl -LO https://deployer.org/deployer.phar \
   && mv deployer.phar /usr/local/bin/dep \
-  && chmod +x /usr/local/bin/dep 
+  && chmod +x /usr/local/bin/dep \
+  && npm install -g yarn
