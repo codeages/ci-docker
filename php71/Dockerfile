@@ -56,5 +56,5 @@ RUN date \
   && npm install -g yarn
 
 RUN add-apt-repository ppa:jonathonf/ffmpeg-4 \
-  && apt-get update
+  && apt-get update \
   && apt-get install -y ffmpeg
