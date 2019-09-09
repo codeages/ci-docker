@@ -58,3 +58,9 @@ RUN date \
 RUN add-apt-repository ppa:jonathonf/ffmpeg-4 \
   && apt-get update \
   && apt-get install -y ffmpeg
+
+RUN echo "Install sonar scanner cli" \
+  && curl https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.0.0.1744-linux.zip -o sonar-scanner-cli.zip \
+  && unzip sonar-scanner-cli.zip \
+  && mv sonar-scanner-4.0.0.1744-linux /opt/sonar-scanner \
+  && rm sonar-scanner-cli.zip
