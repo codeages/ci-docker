@@ -65,7 +65,7 @@ RUN date \
   && php -r "unlink('composer-setup.php');" \
   && mv composer.phar /usr/bin/composer \
   && chmod +x /usr/bin/composer \
-  && curl -L https://phar.phpunit.de/phpunit-7.phar -o /usr/bin/phpunit \
+  && curl -L https://phar.phpunit.de/phpunit-9.phar -o /usr/bin/phpunit \
   && chmod +x /usr/bin/phpunit \
   && curl https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -o /usr/bin/php-cs-fixer \
   && chmod +x /usr/bin/php-cs-fixer \
