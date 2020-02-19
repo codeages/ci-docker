@@ -48,11 +48,8 @@ RUN pecl channel-update pecl.php.net \
   && pecl install https://pecl.php.net/get/Mosquitto-0.4.0.tgz \
   && echo 'extension=mosquitto.so' > /etc/php/7.4/mods-available/mosquitto.ini \
   && cd /etc/php/7.4/cli/conf.d; ln -s ../../mods-available/mosquitto.ini ./30-mosquitto.ini \
-  && cd /etc/php/7.4/phpdbg/conf.d; ln -s ../../mods-available/mosquitto.ini ./30-mosquitto.ini \
-  && pecl install mysql_xdevapi \
-  && echo "extension=mysql_xdevapi.so" > /etc/php/7.4/mods-available/mysql_xdevapi.ini \
-  && cd /etc/php/7.4/cli/conf.d && ln -s ../../mods-available/mysql_xdevapi.ini 30-mysql_xdevapi.ini
-
+  && cd /etc/php/7.4/phpdbg/conf.d; ln -s ../../mods-available/mosquitto.ini ./30-mosquitto.ini 
+  
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
   && apt-get update \
   && apt-get install -y nodejs
