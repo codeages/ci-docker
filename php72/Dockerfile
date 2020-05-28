@@ -64,3 +64,5 @@ RUN echo "Install sonar scanner cli" \
   && unzip sonar-scanner-cli.zip
   && mv sonar-scanner-4.0.0.1744-linux /opt/sonar-scanner \
   && rm sonar-scanner-cli.zip
+
+RUN apt-get update && apt-get install -y mysql-client
