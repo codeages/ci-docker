@@ -26,7 +26,7 @@ RUN pecl channel-update pecl.php.net \
   && cd /etc/php/7.4/cli/conf.d && ln -s ../../mods-available/mcrypt.ini 30-mcrypt.ini \
   && cd /etc/php/7.4/phpdbg/conf.d && ln -s ../../mods-available/mcrypt.ini 30-mcrypt.ini\
   && pecl install redis \
-  && echo "extension=redis.so" > /etc/php/7.1/mods-available/redis.ini \
+  && echo "extension=redis.so" > /etc/php/7.4/mods-available/redis.ini \
   && cd /etc/php/7.4/cli/conf.d && ln -s ../../mods-available/redis.ini 30-redis.ini \
   && cd /etc/php/7.4/phpdbg/conf.d && ln -s ../../mods-available/redis.ini 30-redis.ini \
   && pecl install swoole \
