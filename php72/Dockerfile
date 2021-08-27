@@ -48,7 +48,7 @@ RUN date \
   && chmod +x /usr/bin/composer \
   && curl -L https://phar.phpunit.de/phpunit-7.phar -o /usr/bin/phpunit \
   && chmod +x /usr/bin/phpunit \
-  && curl https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -o /usr/bin/php-cs-fixer \
+  && curl https://cs.symfony.com/download/php-cs-fixer-v2.phar -o /usr/bin/php-cs-fixer \
   && chmod +x /usr/bin/php-cs-fixer \
   && curl -LO https://deployer.org/deployer.phar \
   && mv deployer.phar /usr/local/bin/dep \

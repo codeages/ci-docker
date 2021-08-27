@@ -13,17 +13,10 @@ RUN echo "Install sonar scanner cli" \
   && mv sonar-scanner-4.2.0.1873-linux /opt/sonar-scanner \
   && rm sonar-scanner-cli.zip
 
-# RUN echo "Install Boost" \
-#   && curl https://dl.bintray.com/boostorg/release/1.72.0/source/boost_1_72_0_rc2.tar.gz -o boost.tar.gz \
-#   && tar -xzvf boost.tar.gz \
-#   && cd boost_1_72_0 \
-#   && ./bootstrap.sh \
-#   && ./b2 install \
-
 RUN apt-get update && apt-get install -y \
     php7.1-dev php7.1-cli php7.1-curl php7.1-intl php7.1-mcrypt php7.1-mysql php7.1-pdo php7.1-opcache php7.1-gd php7.1-zip php7.1-intl php7.1-gd php7.1-xml php7.1-phpdbg php7.1-bcmath php7.1-mbstring php7.1-ldap php-pear php7.1-phalcon
 
-RUN pecl channel-update pecl.php.net \
+RUN pecl channel-update https://pecl.php.net \
   && pecl install redis \
   && echo "extension=redis.so" > /etc/php/7.1/mods-available/redis.ini \
   && cd /etc/php/7.1/cli/conf.d && ln -s ../../mods-available/redis.ini 30-redis.ini \
@@ -68,7 +61,7 @@ RUN date \
   && chmod +x /usr/bin/composer \
   && curl -L https://phar.phpunit.de/phpunit-7.phar -o /usr/bin/phpunit \
   && chmod +x /usr/bin/phpunit \
-  && curl https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -o /usr/bin/php-cs-fixer \
+  && curl https://cs.symfony.com/download/php-cs-fixer-v2.phar -o /usr/bin/php-cs-fixer \
   && chmod +x /usr/bin/php-cs-fixer \
   && curl -LO https://deployer.org/deployer.phar \
   && mv deployer.phar /usr/local/bin/dep \
